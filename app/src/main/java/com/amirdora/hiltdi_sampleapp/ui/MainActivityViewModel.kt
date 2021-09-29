@@ -4,8 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.amirdora.hiltdi_sampleapp.db.RoomRepository
 import com.amirdora.hiltdi_sampleapp.db.UserEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class MainActivityViewModel @Inject constructor(private val repository: RoomRepository) :
     ViewModel() {
 

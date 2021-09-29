@@ -1,5 +1,6 @@
 package com.amirdora.hiltdi_sampleapp.di
 
+import android.app.Application
 import android.content.Context
 import com.amirdora.hiltdi_sampleapp.db.AppDao
 import com.amirdora.hiltdi_sampleapp.db.AppDatabase
@@ -15,7 +16,7 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun getAppDb(context: Context) : AppDatabase{
+    fun getAppDb(context: Application) : AppDatabase{
         return AppDatabase.getAppDB(context)
     }
 

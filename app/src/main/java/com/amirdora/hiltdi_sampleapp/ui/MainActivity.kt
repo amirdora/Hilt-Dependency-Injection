@@ -21,8 +21,11 @@ class MainActivity : AppCompatActivity() {
         val view: View = binding!!.root
         setContentView(view)
 
+        initVm()
+
         binding!!.buttonAdd.setOnClickListener {
             val userEntity = UserEntity(name = binding!!.editTextName.text.toString())
+            viewModel.insertRecord(userEntity)
         }
     }
 
