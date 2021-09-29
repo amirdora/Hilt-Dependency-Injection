@@ -33,10 +33,11 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         viewModel.userData.observe(this, { it ->
-            binding!!.textView.text = ""
+            var concatenateList = ""
             it.forEach {
-                binding!!.textView.text = it.name + "\n"
+                concatenateList = concatenateList + it.name + "\n"
             }
+            binding!!.textView.text = concatenateList
         })
     }
 }
